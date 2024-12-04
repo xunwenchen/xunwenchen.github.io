@@ -44,3 +44,71 @@ main {
 section {
     margin-bottom: 40px;
 }
+
+.sidebar {
+  width: 100px; /* Reduced width */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  padding: 15px;
+  height: 50vh; /* Full height */
+  position: fixed; /* Fixed Sidebar (stay in place) */
+  top: 0;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: transform 0.3s ease; /* Smooth transition for collapsing */
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: black; /* Black link color */
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+}
+
+.content {
+  margin-left: 220px; /* Adjusted to ensure content is not blocked */
+  padding: 20px;
+  transition: margin-left 0.3s ease; /* Smooth transition for margin */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar */
+  }
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+  .content {
+    margin-left: 0; /* Remove margin on smaller screens */
+  }
+}
+
+/* Toggle button for sidebar */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure button is above other elements */
+}
