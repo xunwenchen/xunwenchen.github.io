@@ -6,6 +6,24 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/tab_logo.png" type="image/x-icon">
+    <style>
+    .member {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 20px; /* spacing between items */
+    }
+    .member-item {
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    }
+    .member-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -33,47 +51,41 @@
         <section id="gallery">
 
 
-<div class="gallery">
-    <div class="gallery">
+<div class="member">
+    <div class="member-item">
         <img src="images/Maize_2025.8.16_YF.jpg" alt="Maize" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">Maize (photo taken by Mr. YF Qiu)</p>
     </div>
-    <br>
-
-<div class="gallery">
-    <div class="gallery">
+   
+    <div class="member-item">
         <img src="images/hyphae_binding_soil_20250430215839.jpg" alt="Fungal hyphae binding soil particles" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">Fungal hyphae binding soil particles (photo taken by Ms. MG Xing)</p>
     </div>
-    <br>
 
-<div class="gallery">
-    <div class="gallery">
+    <div class="member-item">
         <img src="images/Tolo.jpg" alt="Tolo Harbour and CUHK" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">Tolo Harbour, and CUHK on the upper left</p>
     </div>
-    <br>
 
-<div class="gallery">
-    <div class="gallery">
+    <div class="member-item">
         <img src="images/Site TA2_IMG_8088.jpg" alt="landfill sampling" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">Landfill sampling (left: James, right: Xun Wen)</p>
     </div>
-    <br>
-    <div class="gallery">
+   
+    <div class="member-item">
         <img src="images/mos-beach.jpg" alt="mos-beach" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">MOS Beach NT HKSAR</p>
     </div>
-    <br>
-    <div class="gallery">
+
+    <div class="member-item">
         <img src="images/mingge_maize_growth_2024.11.25_2.jpg" alt="pots" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
         <p style="text-align: center;">Plant growth in greenhouse</p>
     </div>
-    <br>
-    <div class="gallery">
+ 
+    <div class="member-item">
         <img src="images/CHV_4295.jpg" alt="My Photo" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-    <p style="text-align: center;">A plant covered by heavy snow (Mount Zao, Japan)</p>
-</div>
+        <p style="text-align: center;">A plant covered by heavy snow (Mount Zao, Japan)</p>
+     </div>
    
 </div>
     </main>

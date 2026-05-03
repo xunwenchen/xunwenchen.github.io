@@ -6,6 +6,27 @@
     <title>简历</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/tab_logo.png" type="image/x-icon">
+    <style>
+  .profile-container {
+    display: flex;
+    align-items: flex-start; /* top-align image and text */
+    gap: 30px;               /* space between photo and text */
+    padding-top: 30px;    
+    }
+    .profile-pic {
+    max-width: 180px;        /* control photo size */
+    border-radius: 12%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-left: 10px;   /* pushes the photo right */
+    }
+
+    .profile-text {
+    flex: 1;                 /* text takes remaining width */
+    line-height: 1.5;
+    text-align: justify;     
+     margin-top: 10px;    /* flush left alignment */
+    }
+    </style>
 </head>
 <body>
      <header>
@@ -30,21 +51,19 @@
     <div class="container">
         <img src="images/head_fig.jpg" alt="页眉图片" style="width:100%; height:auto; border-radius:8px;">
         <section>    
-            <div class="member">
-                <div class="member-item">
-                    <img src="images/xwchen_profile_pic_2024.10.26.jpg" alt="陈勋文" style="max-width: 180%; height: auto; border: black; margin-left: 80px;">
-                    <style>
-                        .member-item img {
-                            border-radius: 12%;
-                            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                        }
-                    </style>
+           
+
+            <div class="profile-container">
+                <img src="images/xwchen_profile_pic_CHV_7833.jpg" alt="陈勋文" class="profile-pic">
+                <div class="profile-text">
+                    欢迎来到我的简历页面。您将在这里了解到我的背景、教育经历和专业经验。
+                    我的研究主要关注在受胁迫条件下（如污染物暴露和物理胁迫）
+                    植物与微生物之间的复杂相互作用。
                 </div>
-                
-            <ul style="line-height: 1.5; text-align: justify; padding-right: 20px; margin-left: 60px;">
-                欢迎来到我的简历页面。您将在这里了解到我的背景、教育经历和专业经验。我的研究主要关注在受胁迫条件下（如污染物暴露和物理胁迫）植物与微生物之间的复杂相互作用。
-            </ul>
+            </div>
+
         </section>
+
         <section>
             <h2>教育经历</h2>
             <ul>

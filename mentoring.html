@@ -6,7 +6,27 @@
     <title>Members</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/tab_logo.png" type="image/x-icon">
+
+<style>
+    .member {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+      gap: 20px;
+    }
+    .member-item {
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .member-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
+
 <body>
     <header>
         <h1><img src="images/tab_logo.png" alt="logo" style="height: 50px; width: auto; vertical-align: bottom; margin-right: 20px;">Xun Wen Chen</h1>
@@ -63,15 +83,23 @@
                 </div>
                 
             </div>
+
+              <div class="member-item">
+                <img src="images/F_Yao.jpg" alt="Yao" style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <p><b>FY Yao</b><br>Master student (co-sup.)<br>(Microbes and arsenic)<br></p>
+                </div>
+                
+            </div>
         
         </div>
 
         <ul>- <b>H Cui</b> (Master student, JNU; Bacteriophages in biogeochemistry)</ul>
         <ul>- <b>XC Tang</b> (Master student, JNU; Sparse network)</ul>
-        <ul>- <b>N Yin</b> (PhD student (co-sup.), JNU; Topic to be confirmed)</ul>
+        <ul>- <b>N Yin</b> (PhD student (co-sup.), JNU; Bacteriophages in biogeochemistry)</ul>
         
         <h3>Previous Members</h3>
-        <ul>- JW Liang (UG, JNU；Current position: MSc at CUHK (Shenzhen))</ul>
+        <ul>- JW Liang (UG, JNU;Current position: MSc graduated from CUHK (Shenzhen), RA at PKU (Shenzhen))</ul>
         <ul>- HS Li (MSc, SUSTech; Current position: PhD at SUSTech)</ul>
         <ul>- JQ Wu (MSc, SUSTech; Current position: Company in Shenzhen)</ul>
         <ul>- ZM Rao (MSc, SUSTech; Current position: Company in Shanghai)</ul>
