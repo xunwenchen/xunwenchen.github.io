@@ -1,4 +1,12 @@
 
+html {
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -15,25 +23,37 @@ header {
 
 nav ul {
     list-style: none;
+  margin: 0;
     padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+  display: block;
+  margin: 0;
 }
 
 .container {
+  width: min(800px, calc(100% - 24px));
     max-width: 800px; /* Adjust the max width as needed */
-    margin: 20px auto; /* Centers the container */
+    margin: 0px auto; /* Centers the container */
     padding: 20px;
     background-color: white; /* Optional: Adds a background color to the container */
     border-radius: 8px; /* Optional: Adds rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */ */
+}
+
+/* Keep short pages visually aligned with longer pages like publications. */
+.page-content {
+  min-height: calc(100vh - 280px);
 }
 
 footer {
     text-align: center;
+  margin-top: 16px;
     padding: 10px;
     background: #f8f8f8;
 }
@@ -41,6 +61,7 @@ footer {
 /* Optional: Additional styling for sections */
 main {
     margin: 20px 0;
+  overflow-wrap: anywhere;
 }
 
 section {
@@ -139,4 +160,93 @@ a {
 
 a:visited {
   color: rgb(65, 158, 216);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .container {
+    width: calc(100% - 28px);
+    padding: 18px;
+  }
+
+  nav ul {
+    gap: 8px 10px;
+  }
+
+  h1 img {
+    height: 68px !important;
+  }
+
+  .member {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .member-item img[style*="max-width: 40%"] {
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 16px);
+    padding: 14px;
+  }
+
+  main {
+    margin: 14px 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  h1 img {
+    height: 56px !important;
+  }
+
+  nav ul {
+    gap: 6px 10px;
+  }
+
+  nav ul li a {
+    display: inline-block;
+    padding: 2px 0;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-top: 12px;
+  }
+
+  .profile-container > div[style*="flex: 0 0 220px"] {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 260px;
+    flex: 0 0 auto !important;
+  }
+
+  .profile-text {
+    width: 100%;
+    text-align: left;
+  }
+
+  .member {
+    grid-template-columns: 1fr !important;
+  }
+
+  .member-item img[style*="max-width: 40%"] {
+    max-width: 58% !important;
+  }
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

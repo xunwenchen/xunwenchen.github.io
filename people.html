@@ -24,14 +24,44 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+
+        .member-item p {
+            margin: 8px 0 0;
+            line-height: 1.45;
+        }
+
+        @media (min-width: 769px) and (max-width: 1100px) {
+            .member-item {
+                padding: 8px;
+            }
+
+            .member-item img[style*="max-width: 40%"] {
+                max-width: 48% !important;
+            }
+
+            .member-item p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .member-item img[style*="max-width: 40%"] {
+                max-width: 56% !important;
+            }
+
+            .member-item p {
+                font-size: 15px;
+            }
+        }
   </style>
 </head>
 
 <body>
-    <header>
-        <h1 style="text-align: left; margin-left: 200px;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</h1>
-        <nav style="text-align: left; margin-left: 200px;">
-            <ul>
+    <header style="background-color: inherit; margin-bottom: 0; padding-bottom: 0;">
+            <div class="container" style="border: none; background-color: #f4f4f4; margin-bottom: 20px; padding-bottom: 4px;">
+            <h1 style="text-align: left; margin: 0;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</h1>
+                <nav style="text-align: left; margin: 20px 0 0 0; padding: 0; background-color: inherit;">
+                    <ul style="text-align: left; background-color: inherit; margin: 0; padding-top: 0; padding-bottom: 0;">
                 <li><a href="index.html">Home</a></li>
                <!-- <li><a href="news.html">News</a></li> -->
                 <li><a href="research.html">Research</a></li>

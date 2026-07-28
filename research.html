@@ -6,12 +6,54 @@
     <title>Research</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/tab_logo.png" type="image/x-icon">
+    <style>
+    main img {
+        cursor: zoom-in;
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .lightbox.open {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: min(95vw, 1200px);
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .lightbox-close {
+        position: fixed;
+        top: 18px;
+        right: 22px;
+        border: none;
+        background: transparent;
+        color: #fff;
+        font-size: 36px;
+        line-height: 1;
+        cursor: pointer;
+    }
+    </style>
 </head>
 <body>
-    <header>
-        <h1 style="text-align: left; margin-left: 200px;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</h1>
-        <nav style="text-align: left; margin-left: 200px;">
-            <ul>
+    <header style="background-color: inherit; margin-bottom: 0; padding-bottom: 0;">
+            <div class="container" style="border: none; background-color: #f4f4f4; margin-bottom: 20px; padding-bottom: 4px;">
+            <h1 style="text-align: left; margin: 0;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</h1>
+                <nav style="text-align: left; margin: 20px 0 0 0; padding: 0; background-color: inherit;">
+                    <ul style="text-align: left; background-color: inherit; margin: 0; padding-top: 0; padding-bottom: 0;">
                 <li><a href="index.html">Home</a></li>
                 <!--<li><a href="news.html">News</a></li>-->
                 <li><a href="research.html">Research</a></li>
@@ -26,7 +68,7 @@
             </ul>
         </nav>
     </header>
-     <div class="container">
+     <div class="container page-content">
         <img src="images/head_fig.jpg" alt="header" style="width:100%; height:auto; border-radius:8px;">
     <main>
       <h2> Research </h2>
@@ -83,9 +125,58 @@
     </main>
     <img src="images/tail_fig2.jpg" alt="header" style="width:100%; border-radius:8px;">
     </div>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button type="button" class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
+
     <footer>
         <p>© 2026 xwchen</p>
     </footer>
+
+    <script>
+    (function () {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImage = document.getElementById('lightbox-image');
+        var closeButton = lightbox.querySelector('.lightbox-close');
+        var photos = document.querySelectorAll('main img');
+
+        function openLightbox(photo) {
+            lightboxImage.src = photo.src;
+            lightboxImage.alt = photo.alt || 'Page image';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+            document.body.style.overflow = '';
+        }
+
+        photos.forEach(function (photo) {
+            photo.addEventListener('click', function () {
+                openLightbox(photo);
+            });
+        });
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
 
