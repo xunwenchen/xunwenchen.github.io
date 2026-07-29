@@ -1,167 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>图片</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/tab_logo.png" type="image/x-icon">
-     <style>
-    .member {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 20px; /* spacing between items */
-    }
-    .member-item {
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-    }
-    .member-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    cursor: zoom-in;
-    }
-
-    .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    }
-
-    .lightbox.open {
-    display: flex;
-    }
-
-    .lightbox img {
-    max-width: min(95vw, 1200px);
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .lightbox-close {
-    position: fixed;
-    top: 18px;
-    right: 22px;
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 36px;
-    line-height: 1;
-    cursor: pointer;
-    }
-    </style>
 </head>
-<body>
-       <header style="background-color: inherit; margin-bottom: 0; padding-bottom: 0;">
-            <div class="container" style="border: none; background-color: #f4f4f4; margin-bottom: 20px; padding-bottom: 4px;">
-            <h1 style="text-align: left; margin: 0;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</h1>
-                <nav style="text-align: left; margin: 20px 0 0 0; padding: 0; background-color: inherit;">
-                    <ul style="text-align: left; background-color: inherit; margin: 0; padding-top: 0; padding-bottom: 0;">
-                <li><a href="index_cn.html">主页</a></li>
-                <!-- <li><a href="news_cn.html">新闻</a></li> -->
-                <li><a href="research_cn.html">研究</a></li>
-                <li><a href="teaching_cn.html">教学</a></li>
-                <li><a href="publications_cn.html">论文</a></li>
-                 <li><a href="people_cn.html">成员</a></li>
-                <li><a href="gallery_cn.html">图片</a></li>
-                <!-- <li><a href="contact_cn.html">联系</a></li> -->
-                <!-- <li><a href="bio_cn.html">简历</a></li> -->
-               
-                <li><a href="gallery.html" style="border: 2px solid grey; padding: 5px; border-radius: 10px; text-decoration: none;">English</a></li>
-            </ul>
-            
-        </nav>
+<body class="gallery-page">
+    <header style="background-color: inherit; margin-bottom: 0; padding-bottom: 0;">
+        <div class="container" style="border: none; background-color: #f4f4f4; margin-bottom: 20px; padding-bottom: 4px;">
+            <h1 style="text-align: left; margin: 0;"><a href="index_cn.html" style="display: inline-flex; align-items: center; color: inherit; text-decoration: none;"><img src="images/EcoSteering_logo.png" alt="logo" style="height: 80px; width: auto; vertical-align: bottom; margin-right: 10px;"> EcoSteering Lab</a></h1>
+            <nav style="text-align: left; margin: 20px 0 0 0; padding: 0; background-color: inherit;">
+                <ul style="text-align: left; background-color: inherit; margin: 0; padding-top: 0; padding-bottom: 0;">
+                    <li><a href="index_cn.html">主页</a></li>
+                    <li><a href="research_cn.html">研究</a></li>
+                    <li><a href="teaching_cn.html">教学</a></li>
+                    <li><a href="publications_cn.html">论文</a></li>
+                    <li><a href="people_cn.html">成员</a></li>
+                    <li><a href="gallery_cn.html">图片</a></li>
+                    <li><a href="gallery.html" style="border: 2px solid grey; padding: 5px; border-radius: 10px; text-decoration: none;">English</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
+
     <div class="container">
-    <img src="images/head_fig.jpg" alt="header" style="width:100%; height:auto; border-radius:8px;">
-    <main>
-        <h2>照片</h2>
+        <img src="images/head_fig.jpg" alt="header" style="width:100%; height:auto; border-radius:8px;">
+        <main>
+            <h2>照片</h2>
 
-        <section id="gallery">
+            <section id="gallery">
+                    <div class="member">
+                        <div class="member-item">
+                            <img src="images/Medicago_20260723093743_217_237.jpg" alt="苜蓿" data-caption="苜蓿（王娜娜拍摄）">
+                            <p>苜蓿（王娜娜拍摄）</p>
+                        </div>
 
+                        <div class="member-item">
+                            <img src="images/Cairns_tree.HEIC" alt="凯恩斯-树" data-caption="凯恩斯-树">
+                            <p>凯恩斯-树</p>
+                        </div>
 
+                        <div class="member-item">
+                            <img src="images/Cairns_beach.HEIC" alt="凯恩斯-海滩" data-caption="凯恩斯-海滩">
+                            <p>凯恩斯-海滩</p>
+                        </div>
 
-<div class="gallery">
-    <div class="member">
+                        <div class="member-item">
+                            <img src="images/group_lunch_2026.6.12_crop.jpeg" alt="中午聚餐" data-caption="中午聚餐（2026.6.12）">
+                            <p>中午聚餐（2026.6.12）</p>
+                        </div>
 
-      <div class="member-item">
-        <img src="images/Medicago_20260723093743_217_237.jpg" alt="Medicago" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">苜蓿（王娜娜拍摄）</p>
-    </div>   
+                        <div class="member-item">
+                            <img src="images/Maize_2025.8.16_YF.jpg" alt="玉米" data-caption="玉米（丘逸凡拍摄）">
+                            <p>玉米（丘逸凡拍摄）</p>
+                        </div>
 
-    <div class="member-item">
-        <img src="images/Cairns_tree.HEIC" alt="Cairns Tree" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">凯恩斯-树</p>
-    </div>
+                        <div class="member-item">
+                            <img src="images/hyphae_binding_soil_20250430215839.jpg" alt="真菌菌丝粘连土壤颗粒" data-caption="被真菌菌丝粘连的土壤颗粒（邢明歌拍摄）">
+                            <p>被真菌菌丝粘连的土壤颗粒（邢明歌拍摄）</p>
+                        </div>
 
-    <div class="member-item">
-        <img src="images/Cairns_beach.HEIC" alt="Cairns Beach" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">凯恩斯-海滩</p>
-    </div>   
+                        <div class="member-item">
+                            <img src="images/Tolo.jpg" alt="吐露港和香港中文大学" data-caption="吐露港和香港中文大学">
+                            <p>吐露港和香港中文大学</p>
+                        </div>
 
-    <div class="member-item">
-        <img src="images/group_lunch_2026.6.12_crop.jpeg" alt="Group lunch" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">中午聚餐（2026.6.12）</p>
-     </div>
+                        <div class="member-item">
+                            <img src="images/Site TA2_IMG_8088.jpg" alt="垃圾填埋场取样" data-caption="垃圾填埋场取样（左：James，右：勋文）">
+                            <p>垃圾填埋场取样（左：James，右：勋文）</p>
+                        </div>
 
-        <div class="member-item">
-            <img src="images/Maize_2025.8.16_YF.jpg" alt="Maize" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-            <p style="text-align: center;">玉米（丘逸凡拍摄）</p>
-        </div>
+                        <div class="member-item">
+                            <img src="images/mos-beach.jpg" alt="香港马鞍山海滩" data-caption="香港马鞍山海滩">
+                            <p>香港马鞍山海滩</p>
+                        </div>
 
-        <div class="member-item">
-             <img src="images/hyphae_binding_soil_20250430215839.jpg" alt="Fungal hyphae binding soil particles" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-            <p style="text-align: center;">被真菌菌丝粘连的土壤颗粒（邢明歌拍摄）</p>
-        </div>
+                        <div class="member-item">
+                            <img src="images/mingge_maize_growth_2024.11.25_2.jpg" alt="温室中的植物" data-caption="温室中的植物">
+                            <p>温室中的植物</p>
+                        </div>
 
-<div class="member-item">
-        <img src="images/Tolo.jpg" alt="Tolo Harbour and CUHK" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">吐露港和香港中文大学</p>
-    </div>
-    
-<div class="member-item">
-        <img src="images/Site TA2_IMG_8088.jpg" alt="landfill sampling" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">垃圾填埋场取样（左：James，右：勋文）</p>
-    </div>
-  
-    <div class="member-item">
-        <img src="images/mos-beach.jpg" alt="mos-beach" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">香港马鞍山海滩</p>
-    </div>
-   
-    <div class="member-item">
-        <img src="images/mingge_maize_growth_2024.11.25_2.jpg" alt="pots" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-        <p style="text-align: center;">温室中的植物</p>
-    </div>
-   
-    <div class="member-item">
-        <img src="images/CHV_4295.jpg" alt="My Photo" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 8px;">
-    <p style="text-align: center;">被厚雪覆盖的植物（日本藏王山）</p>
-</div>
-   
-</div>
-    </main>
-    <img src="images/tail_fig2.jpg" alt="header" style="width:100%; border-radius:8px;">
+                        <div class="member-item">
+                            <img src="images/CHV_4295.jpg" alt="日本藏王山" data-caption="被厚雪覆盖的植物（日本藏王山）">
+                            <p>被厚雪覆盖的植物（日本藏王山）</p>
+                        </div>
+                    </div>
+                </section>
+        </main>
+        <img src="images/tail_fig2.jpg" alt="header" style="width:100%; border-radius:8px;">
     </div>
 
     <div id="lightbox" class="lightbox" aria-hidden="true">
-        <button type="button" class="lightbox-close" aria-label="Close image viewer">&times;</button>
-        <img id="lightbox-image" src="" alt="">
+        <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="图片查看器">
+            <button type="button" class="lightbox-close" aria-label="关闭图片查看器">&times;</button>
+            <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="查看上一张">&#8249;</button>
+            <button type="button" class="lightbox-nav next" id="lightbox-next" aria-label="查看下一张">&#8250;</button>
+            <div class="lightbox-stage">
+                <img id="lightbox-image" src="" alt="">
+            </div>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+            <div id="lightbox-thumbnails" class="lightbox-thumbnails"></div>
+        </div>
     </div>
-
-
 
     <footer>
         <p>© 2026 xwchen</p>
@@ -172,11 +114,54 @@
         var lightbox = document.getElementById('lightbox');
         var lightboxImage = document.getElementById('lightbox-image');
         var closeButton = lightbox.querySelector('.lightbox-close');
-        var photos = document.querySelectorAll('#gallery .member-item img');
+        var prevButton = document.getElementById('lightbox-prev');
+        var nextButton = document.getElementById('lightbox-next');
+        var captionBox = document.getElementById('lightbox-caption');
+        var thumbnailBox = document.getElementById('lightbox-thumbnails');
+        var memberItems = Array.from(document.querySelectorAll('#gallery .member-item'));
+        var items = memberItems.map(function (memberItem) {
+            var img = memberItem.querySelector('img');
+            return {
+                src: img.getAttribute('src'),
+                alt: img.getAttribute('alt') || 'Gallery photo',
+                caption: img.getAttribute('data-caption') || memberItem.querySelector('p').textContent.trim()
+            };
+        });
+        var currentIndex = 0;
+        var zoomed = false;
 
-        function openLightbox(photo) {
-            lightboxImage.src = photo.src;
-            lightboxImage.alt = photo.alt || 'Gallery photo';
+        function buildThumbnails() {
+            thumbnailBox.innerHTML = '';
+            items.forEach(function (item, index) {
+                var thumbButton = document.createElement('button');
+                thumbButton.type = 'button';
+                thumbButton.className = 'lightbox-thumbnail' + (index === currentIndex ? ' active' : '');
+                thumbButton.setAttribute('aria-label', '查看 ' + item.alt);
+                var thumbImage = document.createElement('img');
+                thumbImage.src = item.src;
+                thumbImage.alt = item.alt;
+                thumbButton.appendChild(thumbImage);
+                thumbButton.addEventListener('click', function () {
+                    currentIndex = index;
+                    updateViewer();
+                });
+                thumbnailBox.appendChild(thumbButton);
+            });
+        }
+
+        function updateViewer() {
+            var item = items[currentIndex];
+            lightboxImage.src = item.src;
+            lightboxImage.alt = item.alt;
+            captionBox.textContent = item.caption;
+            zoomed = false;
+            lightboxImage.classList.remove('zoomed');
+            buildThumbnails();
+        }
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateViewer();
             lightbox.classList.add('open');
             lightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -186,16 +171,37 @@
             lightbox.classList.remove('open');
             lightbox.setAttribute('aria-hidden', 'true');
             lightboxImage.src = '';
+            captionBox.textContent = '';
             document.body.style.overflow = '';
+            zoomed = false;
+            lightboxImage.classList.remove('zoomed');
         }
 
-        photos.forEach(function (photo) {
-            photo.addEventListener('click', function () {
-                openLightbox(photo);
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateViewer();
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateViewer();
+        }
+
+        memberItems.forEach(function (memberItem, index) {
+            memberItem.querySelector('img').addEventListener('click', function () {
+                openLightbox(index);
             });
         });
 
+        lightboxImage.addEventListener('click', function () {
+            zoomed = !zoomed;
+            lightboxImage.classList.toggle('zoomed', zoomed);
+        });
+
+        prevButton.addEventListener('click', showPrev);
+        nextButton.addEventListener('click', showNext);
         closeButton.addEventListener('click', closeLightbox);
+
         lightbox.addEventListener('click', function (event) {
             if (event.target === lightbox) {
                 closeLightbox();
@@ -203,8 +209,15 @@
         });
 
         document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+            if (!lightbox.classList.contains('open')) {
+                return;
+            }
+            if (event.key === 'Escape') {
                 closeLightbox();
+            } else if (event.key === 'ArrowLeft') {
+                showPrev();
+            } else if (event.key === 'ArrowRight') {
+                showNext();
             }
         });
     })();

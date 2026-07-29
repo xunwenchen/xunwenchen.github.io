@@ -1,6 +1,7 @@
 
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -12,7 +13,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Optional: Adds a background color */
-    
+    -webkit-text-size-adjust: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 header {
@@ -172,12 +179,241 @@ a:visited {
   color: rgb(65, 158, 216);
 }
 
+.gallery-page .gallery-intro {
+  color: #666;
+  margin-top: -6px;
+  margin-bottom: 18px;
+}
+
+.gallery-page .member {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-page .member-item {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.gallery-page .member-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-page .member-item img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+.gallery-page .member-item p {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-dialog {
+  position: relative;
+  width: min(1100px, 100%);
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 260px;
+}
+
+.lightbox img {
+  max-width: min(92vw, 920px);
+  max-height: 76vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  cursor: zoom-in;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.lightbox img.zoomed {
+  transform: scale(1.6);
+  cursor: zoom-out;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+  cursor: pointer;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+}
+
+.lightbox-nav.prev {
+  left: -14px;
+}
+
+.lightbox-nav.next {
+  right: -14px;
+}
+
+.lightbox-caption {
+  color: #fff;
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 800px;
+}
+
+.lightbox-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  overflow: auto;
+  padding-top: 4px;
+}
+
+.lightbox-thumbnail {
+  width: 72px;
+  height: 54px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lightbox-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.lightbox-thumbnail.active {
+  border-color: rgb(65, 158, 216);
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+.publications-page .page-shell {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.publications-page .page-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.publications-page .year-nav {
+  position: sticky;
+  top: 112px;
+  width: 92px;
+  flex-shrink: 0;
+  padding: 10px 0;
+  border-left: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.publications-page .year-nav a {
+  display: block;
+  width: 100%;
+  margin: 0 8px;
+  padding: 7px 10px;
+  color: rgb(65, 158, 216);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.publications-page .year-nav a:hover,
+.publications-page .year-nav a:focus-visible {
+  color: rgb(65, 158, 216);
+  background: linear-gradient(135deg, #f1f8ff, #eaf6ff);
+  transform: translateX(2px);
+}
+
+.publications-page .year-nav a:active {
+  transform: translateX(1px) scale(0.98);
+}
+
 @media (min-width: 1101px) {
+  .container {
+    width: min(760px, calc(100% - 24px));
+  }
+
   nav ul {
     gap: 16px 36px;
   }
@@ -210,10 +446,41 @@ img {
   }
 }
 
+@media (max-width: 1024px) {
+  .container {
+    width: calc(100% - 20px);
+    padding: 16px;
+  }
+
+  .gallery-page .member {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     width: calc(100% - 16px);
     padding: 14px;
+  }
+
+  .publications-page .page-shell {
+    display: block;
+  }
+
+  .publications-page .year-nav {
+    position: static;
+    width: auto;
+    margin: 18px 0 8px;
+    padding: 8px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-left: 0;
+    border: 1px solid #e2e8f0;
+  }
+
+  .publications-page .year-nav a {
+    margin: 0;
   }
 
   main {
@@ -230,18 +497,77 @@ img {
   }
 
   nav ul {
-    gap: 6px 8px;
+    gap: 6px 10px;
   }
 
   nav ul li a {
     display: inline-block;
-    padding: 2px 0;
+    padding: 6px 2px;
     font-size: 15px;
+    min-height: 36px;
   }
 
   nav ul li:last-child {
     margin-left: auto;
     padding-left: 6px;
+  }
+
+  .gallery-page .member {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-page .member-item {
+    padding: 8px;
+  }
+
+  .gallery-page .member-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-dialog {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .lightbox-close {
+    width: 44px;
+    height: 44px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .lightbox-nav.prev {
+    left: 4px;
+  }
+
+  .lightbox-nav.next {
+    right: 4px;
+  }
+
+  .lightbox-thumbnail {
+    width: 64px;
+    height: 48px;
+  }
+
+  .lightbox-thumbnail {
+    width: 60px;
+    height: 44px;
+  }
+
+  .lightbox-caption {
+    font-size: 0.9rem;
+    padding: 0 8px;
   }
 
   .profile-container {
