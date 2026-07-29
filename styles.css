@@ -474,33 +474,35 @@ img {
   }
 
   .publications-page .page-shell {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: block;
     margin-top: 14px;
   }
 
   .publications-page .page-main {
-    order: 2;
+    display: block;
   }
 
   .publications-page .year-nav {
-    position: relative;
+    position: static;
     top: auto;
     width: auto;
-    margin: 0;
+    margin: 0 0 12px 0;
     padding: 8px 10px;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     gap: 6px;
     border-left: 0;
     border: 1px solid #e2e8f0;
-    order: 1;
-    align-self: flex-start;
+    background: #fff;
+    box-shadow: none;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .publications-page .year-nav a {
     margin: 0;
+    width: auto;
+    padding: 6px 8px;
   }
 
   main {
