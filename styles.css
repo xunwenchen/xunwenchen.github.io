@@ -474,19 +474,29 @@ img {
   }
 
   .publications-page .page-shell {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .publications-page .page-main {
+    order: 2;
   }
 
   .publications-page .year-nav {
-    position: static;
+    position: relative;
+    top: auto;
     width: auto;
-    margin: 18px 0 8px;
+    margin: 0;
     padding: 8px 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     border-left: 0;
     border: 1px solid #e2e8f0;
+    order: 1;
+    align-self: flex-start;
   }
 
   .publications-page .year-nav a {
